@@ -1,0 +1,4 @@
+node_modules
+.nv
+db.js
+auth.js
