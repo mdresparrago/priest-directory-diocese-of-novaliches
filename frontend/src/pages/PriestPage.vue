@@ -1,13 +1,22 @@
-<template><q-page class="flex flex-center">
-<article>
-  <figure>
-    <img src="https://png.pngtree.com/png-vector/20240127/ourmid/pngtree-catholic-priest-cartoon-png-image_11497548.png" alt=""></figure>
-  <h2>Rev. Fr. Reynaldo FLores</h2>
-  <p>Chancellor</p>
-</article>
+<template>
+  <q-page class="flex flex-center">
+    <article>
 
-</q-page>
+      <h2>{{ priest.firstName }}</h2>
+      <p>{{ priest.position }}</p>
+
+    </article>
+    <h1>Priest Directory</h1>
+  </q-page>
 </template>
+
+<script setup>
+import { usePriestStore } from 'stores/priest'
+import { computed } from 'vue'
+
+const priestStore = usePriestStore()
+const priest = computed(() => priestStore.currentPriest)
+</script>
 <style>
 * {
   box-sizing: border-box;
